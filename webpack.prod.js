@@ -2,6 +2,8 @@ const { merge } = require("webpack-merge");
 const webpackConfig = require("./webpack.config");
 const TerserWebpackPlugin = require("terser-webpack-plugin");
 const { DefinePlugin } = require("webpack");
+const path =  require('path');
+
 module.exports = merge(webpackConfig, {
   mode: "production",
   output: {
