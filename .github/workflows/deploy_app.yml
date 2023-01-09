@@ -7,10 +7,10 @@ jobs:
   deploy-app:
     name: deploy-app
     runs-on: ubuntu-latest
+    env:
+      REACT_APP_API_ACCESS_KEY: ${{ secrets.REACT_APP_API_ACCESS_KEY}}
+      REACT_APP_API_SECRET_KEY: ${{secrets.REACT_APP_API_SECRET_KEY}}
     steps:
-      - env:
-        REACT_APP_API_ACCESS_KEY: ${{ secrets.REACT_APP_API_ACCESS_KEY}}
-        REACT_APP_API_SECRET_KEY: ${{secrets.REACT_APP_API_SECRET_KEY}}
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
