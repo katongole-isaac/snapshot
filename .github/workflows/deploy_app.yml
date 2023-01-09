@@ -8,12 +8,14 @@ jobs:
     name: deploy-app
     runs-on: ubuntu-latest
     steps:
-      # env:
+      - env:
+        REACT_APP_API_ACCESS_KEY: ${{ secrets.REACT_APP_API_ACCESS_KEY}}
+        REACT_APP_API_SECRET_KEY: ${{secrets.REACT_APP_API_SECRET_KEY}}
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: "16.8.0"
       - run: npm install
-      - run: git config --global user.name katongole-isaac
-      - run: git config --global user.email katongoleisacc78@gmail.com
       - run: npm run deploy
+        with:
+          repo-token: ${{ secrets.ACCESS_TOKEN }}
