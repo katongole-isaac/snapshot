@@ -1,12 +1,9 @@
 import { GlobalContext } from "../context/context";
 import withRouter from "../higherOrderFunc/withRouter";
-import FlexContainer from "./FlexContainer";
 import Image from "./Image";
 import { fetchPhotos } from "../api/fetch";
-import ImageCard from "./ImageCard";
 import getPhotoList from "../api/getPhotoList";
 import Error from "./Error";
-import SearchTitle from "./SearchTitle";
 import NoPhotos from "./NoPhotos";
 import Loading from "./Loading ";
 
@@ -18,9 +15,7 @@ class FetchImageDisplay extends React.Component {
 
     if (data?.length === 0) return <NoPhotos />;
 
-    if (error) {
-      return <Error />;
-    }
+    if (error) return <Error error={error} />;
 
     if (isLoading) return <Loading />;
 
