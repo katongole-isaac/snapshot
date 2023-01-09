@@ -1,5 +1,5 @@
 {
-  "name": "playground",
+  "name": "snapshot",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,6 +9,7 @@
   },
   "keywords": [],
   "author": "",
+  "proxy": "http://localhost:3001",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.19.3",
@@ -18,6 +19,7 @@
     "babel-loader": "^9.1.0",
     "css-loader": "^6.7.2",
     "css-minimizer-webpack-plugin": "^4.2.2",
+    "dotenv-webpack": "^8.0.1",
     "html-webpack-plugin": "^5.5.0",
     "json5": "^2.2.1",
     "mini-css-extract-plugin": "^2.7.2",
@@ -32,7 +34,11 @@
     "yamljs": "^0.3.0"
   },
   "dependencies": {
+    "bootstrap": "^5.2.3",
+    "dotenv": "^16.0.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.6.1",
+    "unsplash-js": "^7.0.15"
   }
 }

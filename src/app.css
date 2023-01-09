@@ -1,24 +1,122 @@
-* {
-  box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Beastly&display=swap");
+
+:root {
+  --appMaxWidth: 60%;
+  --appMinHeight: 100vh;
+  --ImageDisplayMinHeight: 670px;
+  --userInputContainer: 50%;
+  --appBgColor: #fafafa;
+  --appSecondColor: #f5f5f5;
+  --ImageHeaderHeight: 10%;
+  --ImageSectionHeight: calc(100vh - var(--ImageHeaderHeight));
 }
 
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  background-color: #fafafa;
+.sharedLayout {
+  max-width: var(--appMaxWidth);
+  min-height: var(--appMinHeight);
 }
-div {
-  margin: auto;
-  width: 400px;
+
+.app {
+  background-image: linear-gradient(
+    to right bottom,
+    var(--appBgColor),
+    var(--appSecondColor)
+  );
 }
-div > h2 {
-  text-align: center;
+
+.app ::selection {
+  background: lightblue;
 }
-.footer {
-  position: fixed;
-  bottom: 0;
+
+.user-input-container {
+  width: var(--userInputContainer);
+  margin: 0 auto;
 }
-.footer > * {
-  text-align: center;
-  font-style: italic;
+.userInput {
+  outline: #e2e2e2 solid 5px;
+  transition: all 2s;
+}
+
+.userInput:focus {
+  outline: #e2e2e2 solid 5px;
+}
+
+.material-symbols-outlined.search {
+  font-variation-settings: "FILL" 1, "wght" 600, "GRAD" 0, "opsz" 40;
+  font-size: 30px;
+  cursor: pointer;
+  color: #e2e2e2;
+  transition: color 0.5s;
+}
+
+.material-symbols-outlined.search-active {
+  color: #1d3557;
+}
+.image-display {
+  height: var(--ImageDisplayMinHeight);
+  min-height: var(--ImageDisplayMinHeight);
+}
+
+.image-container {
+  overflow: hidden;
+  height: max-content;
+  align-self: center;
+}
+
+.image {
+  background-position: center;
+  background-size: cover;
+  transition: 0.4s;
+  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+}
+
+.image:hover {
+  transform: scale(1.01);
+  overflow: hidden;
+}
+
+.image-section {
+  height: var(--ImageSectionHeight);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, auto));
+  gap: 1em;
+}
+
+.image-section > * {
+  flex-grow: 1;
+}
+
+.image-header {
+  height: var(--ImageHeaderHeight);
+  color: #284b63;
+  font-family: "Rubik Beastly", cursive;
+}
+
+.title-header {
+  font-family: "Rubik Beastly", cursive;
+}
+/* 
+on small viewport input = 90%
+*/
+
+@media (max-width: 600px) {
+  .user-input-container {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 800px) {
+  .user-input-container {
+    width: 90%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .sharedLayout {
+    max-width: 90%;
+  }
 }

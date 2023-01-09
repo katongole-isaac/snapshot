@@ -6,20 +6,20 @@ const yaml = require("yamljs");
 const toml = require("toml");
 const json5 = require("json5");
 const webpack = require("webpack");
+const DotEnv = require("dotenv-webpack");
 
 const cssRegExp = /\.css$/i;
 const imageRegExp = /\.(png|svg|gif|jpe?g)$/i;
 const jsExtensions = ["*", ".js", ".jsx"];
 
 module.exports = {
-  entry: {
-    index: "./src/index.js",
-  },
+  entry: "./src/index.js",
 
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "[name].[contenthash].bundle.js",
+    filename: "[name].bundle.js",
     clean: true,
+    publicPath: "/",
   },
 
   resolve: {
@@ -84,6 +84,7 @@ module.exports = {
       React: "react",
     }),
     new MiniCssExtractPlugin(),
+    new DotEnv(),
   ],
 
   optimization: {

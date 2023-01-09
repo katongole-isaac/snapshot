@@ -4,6 +4,7 @@ const path = require("path");
 
 module.exports = merge(webpackConfig, {
   mode: "development",
+  devtool: "source-map",
   devServer: {
     static: {
       directory: path.join(__dirname, "public/"),
@@ -11,6 +12,7 @@ module.exports = merge(webpackConfig, {
     },
     hot: true, //HMR
     port: 3001,
+    historyApiFallback: true,
     open: true, // open the default browser on start
   },
 });
