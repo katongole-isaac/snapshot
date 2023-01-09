@@ -1,15 +1,17 @@
 name: Snapshot-workflow
 run-name: ${{ github.actor }} is deploying Snapshot-app
 
-jobs: 
-  deploy-app :
+on: [push]
+
+jobs:
+  deploy-app:
     name: deploy-app
     runs-on: ubuntu-latest
-    steps: 
-      # env: 
+    steps:
+      # env:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
-        with: 
-          node-version: '16.8.0'
+        with:
+          node-version: "16.8.0"
       - run: npm install
-      - run: 
+      - run: npm run deploy
