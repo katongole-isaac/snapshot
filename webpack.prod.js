@@ -7,11 +7,10 @@ const path = require("path");
 module.exports = merge(webpackConfig, {
   mode: "production",
   output: {
-    path: path.resolve(__dirname, "dist"),
+    ...webpackConfig.output,
     filename: "[name].[contenthash].bundle.js",
     clean: true,
   },
-  stats: { chidlren: true },
   devtool: "source-map",
   optimization: {
     minimize: true,
