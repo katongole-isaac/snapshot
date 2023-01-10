@@ -4,12 +4,12 @@ const TerserWebpackPlugin = require("terser-webpack-plugin");
 const { DefinePlugin } = require("webpack");
 const path = require("path");
 
-module.exports = merge(webpackConfig, {
+// module.exports
+let web = merge(webpackConfig, {
   mode: "production",
   output: {
     ...webpackConfig.output,
-    filename: "[name].[contenthash].bundle.js",
-    clean: true,
+    // filename: "[name].[contenthash].bundle.js",
   },
   devtool: "source-map",
   optimization: {
@@ -33,3 +33,4 @@ module.exports = merge(webpackConfig, {
   },
 });
 
+console.log(web);
