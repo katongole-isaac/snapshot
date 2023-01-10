@@ -21,7 +21,7 @@ class FetchImageDisplay extends React.Component {
 
     return (
       <>
-        <div className=" w-100 vh-100  image-section">
+        <div className=" w-100 vh-100  image-section mt-2">
           {data?.map(({ id, urls, alt_description }) => (
             <Image key={id} src={urls.thumb} />
           ))}

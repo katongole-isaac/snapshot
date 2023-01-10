@@ -74,7 +74,6 @@ class SharedLayout extends React.Component {
               ) : (
                 <Outlet />
               )}
-              <div className="mb-2 p-4"></div>
             </div>
           </div>
         </GlobalContext.Provider>
