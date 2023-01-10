@@ -2,6 +2,8 @@ name: Snapshot-workflow
 run-name: ${{ github.actor }} is deploying Snapshot-app
 
 on: [push]
+permissions: ${{ secrets.ACCESS_TOKEN }}
+  
 
 jobs:
   deploy-app:
