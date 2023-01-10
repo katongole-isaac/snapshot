@@ -12,7 +12,7 @@ export default function (searchTerm, signal) {
 
   const queryOptions = {
     query: searchTerm.trim() ,
-    page: 2,
+    page: 1,
     perPage: 20,
     color: config.COLORS[randomPageNumber(config.COLORS.length)],
     orientation: "portrait",
