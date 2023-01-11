@@ -2,8 +2,6 @@ name: Snapshot-workflow
 run-name: ${{ github.actor }} is deploying Snapshot-app
 
 on: [push]
-permissions: ${{ secrets.ACCESS_TOKEN }}
-  
 
 jobs:
   deploy-app:
@@ -12,7 +10,7 @@ jobs:
     env:
       REACT_APP_API_ACCESS_KEY: ${{ secrets.REACT_APP_API_ACCESS_KEY}}
       REACT_APP_API_SECRET_KEY: ${{secrets.REACT_APP_API_SECRET_KEY}}
-      ACCESS_TOKEN: ${{secrets.ACESS_TOKEN}}
+      # ACCESS_TOKEN: ${{secrets.ACESS_TOKEN}}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
